@@ -20,9 +20,7 @@ export default function Home() {
             </code>
             .
           </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
+          <li className="tracking-[-.01em]">CI/CD 파이프라인 테스트 중</li>
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
