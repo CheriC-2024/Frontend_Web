@@ -21,4 +21,4 @@ jobs:
 
       - name: Deploy to Production
         run: |
-          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN_CHERIC }}
+          vercel deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN_CHERIC }}
