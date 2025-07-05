@@ -2,23 +2,30 @@ name: CD
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN_CHERIC }}
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Install Vercel CLI
         run: npm install -g vercel@latest
 
+      - name: Pull Vercel Environment Info
+        run: |
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN_CHERIC }}
+
+      - name: Build with Vercel
+        run: |
+          vercel build --prod --token=${{ secrets.VERCEL_TOKEN_CHERIC }}
+
       - name: Deploy to Production
         run: |
-          vercel deploy --prod --yes --token=${{ secrets.VERCEL_TOKEN_CHERIC }}
+          vercel deploy --prebuilt --prod --yes --token=${{ secrets.VERCEL_TOKEN_CHERIC }}
