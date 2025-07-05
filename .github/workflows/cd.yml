@@ -1,34 +1,34 @@
-# CI 성공 후, 브랜치 푸시 시 staging/production 배포
 name: CD
 
 on:
-  workflow_run:
-    workflows: ['CI']
-    types: [completed]
+  push:
+    branches:
+      - main
+
+env:
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN_CHERIC }}
+
 jobs:
   deploy:
-    # 머지된 브랜치가 develop/main 일 때만 실행
-    if: ${{ github.event.workflow_run.head_branch == 'develop' || github.event.workflow_run.head_branch == 'main' }}
     runs-on: ubuntu-latest
-
-    env:
-      VERCEL_ORG_ID:     ${{ secrets.VERCEL_ORG_ID }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-      VERCEL_TOKEN:      ${{ secrets.VERCEL_TOKEN_CHERIC }}
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Install Vercel CLI
-        run: npm install --global vercel@latest
+        run: npm install -g vercel@latest
 
-      - name: Pull Vercel Environment Information
+      - name: Pull Vercel Environment Info
         run: |
-          vercel pull --yes \
-            --environment=${{ github.event.workflow_run.head_branch == 'main' && 'production' || 'preview' }}
+          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN_CHERIC }}
 
-      - name: Deploy to Vercel
+      - name: Build with Vercel
         run: |
-          vercel deploy --prebuilt \
-            ${{ github.event.workflow_run.head_branch == 'main' && '--prod' || '' }}
+          vercel build --token=${{ secrets.VERCEL_TOKEN_CHERIC }}
+
+      - name: Deploy to Production
+        run: |
+          vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN_CHERIC }}
