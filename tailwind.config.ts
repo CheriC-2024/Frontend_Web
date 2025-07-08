@@ -1,5 +1,5 @@
 import type { Config } from 'tailwindcss';
-import designTokens from '@/lib/design-tokens';
+import designTokens from '@/styles/design-tokens';
 
 const config: Config = {
   content: [
@@ -15,13 +15,13 @@ const config: Config = {
       colors: designTokens.colors,
 
       fontFamily: {
-        primary: [designTokens.typography.fontFamily.primary, 'sans-serif'],
-        blackhan: [designTokens.typography.fontFamily.blackhan, 'sans-serif'],
-        dacapo: [designTokens.typography.fontFamily.dacapo, 'sans-serif'],
-        snowfrost: [designTokens.typography.fontFamily.snowfrost, 'sans-serif'],
-        santokki: [designTokens.typography.fontFamily.santokki, 'sans-serif'],
-        lotteria: [designTokens.typography.fontFamily.lotteria, 'sans-serif'],
-        ryu: [designTokens.typography.fontFamily.ryu, 'sans-serif'],
+        primary: ['var(--font-pretendard)', 'sans-serif'],
+        blackhan: ['var(--font-blackhan)', 'sans-serif'],
+        dacapo: ['var(--font-dacapo)', 'sans-serif'],
+        snowfrost: ['var(--font-snowfrost)', 'sans-serif'],
+        santokki: ['var(--font-santokki)', 'sans-serif'],
+        lotteria: ['var(--font-lotteria)', 'sans-serif'],
+        ryu: ['var(--font-ryu)', 'sans-serif'],
       },
 
       fontSize: designTokens.typography.fontSize,
