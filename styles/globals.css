@@ -8,16 +8,20 @@
   --font-santokki: 'SanTokki', sans-serif;
   --font-lotteria: 'Lotteria', sans-serif;
   --font-ryu: 'OnGeurLip-Ryu', sans-serif;
+
+  --background: #FCFCFC;
+  --foreground: #120000;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #120000;
+    --foreground: #FCFCFC;
   }
 }
 
 @theme inline {
+  /* Fonts */
   --font-sans: var(--font-pretendard);
   --font-blackhan: var(--font-blackhan);
   --font-dacapo: var(--font-dacapo);
@@ -28,6 +32,166 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+   /* Headings */
+  --text-h1: 3rem;
+  --text-h1--line-height: 125%;
+  --text-h1--font-weight: 700;
+
+  --text-h2: 2.5rem;
+  --text-h2--line-height: 125%;
+  --text-h2--font-weight: 700;
+
+  --text-h3: 2.25rem;
+  --text-h3--line-height: 125%;
+  --text-h3--font-weight: 700;
+
+  --text-h4: 1.5rem;
+  --text-h4--line-height: 125%;
+  --text-h4--font-weight: 700;
+
+  --text-h5: 1.25rem;
+  --text-h5--line-height: 125%;
+  --text-h5--font-weight: 700;
+
+  --text-h6: 1.125rem;
+  --text-h6--line-height: 125%;
+  --text-h6--font-weight: 700;
+
+  /* Subtitles */
+  --text-subtitle1: 1rem;
+  --text-subtitle1--line-height: 150%;
+  --text-subtitle1--font-weight: 700;
+
+  --text-subtitle2: 0.875rem;
+  --text-subtitle2--line-height: 150%;
+  --text-subtitle2--font-weight: 700;
+
+  /* Body */
+  --text-body1: 1rem;
+  --text-body1--line-height: 180%;
+  --text-body1--font-weight: 500;
+
+  --text-body2: 0.875rem;
+  --text-body2--line-height: 180%;
+  --text-body2--font-weight: 500;
+
+  /* Button */
+  --text-button: 0.875rem;
+  --text-button--line-height: 1.25rem;
+  --text-button--font-weight: 500;
+
+  /* Caption */
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1rem;
+  --text-caption--font-weight: 500;
+
+  /* Font Sizes */
+  --text-12: 0.75rem;
+  --text-12--line-height: 1rem;
+
+  --text-14: 0.875rem;
+  --text-14--line-height: 1.25rem;
+
+  --text-16: 1rem;
+  --text-16--line-height: 1.5rem;
+
+  --text-18: 1.125rem;
+  --text-18--line-height: 1.75rem;
+
+  --text-20: 1.25rem;
+  --text-20--line-height: 1.75rem;
+
+  --text-24: 1.5rem;
+  --text-24--line-height: 2rem;
+
+  --text-28: 1.75rem;
+  --text-28--line-height: 2.1875rem;
+
+  --text-32: 2rem;
+  --text-32--line-height: 2.5rem;
+
+  --text-36: 2.25rem;
+  --text-36--line-height: 2.75rem;
+
+  --text-40: 2.5rem;
+  --text-40--line-height: 3rem;
+
+  --text-48: 3rem;
+  --text-48--line-height: 3.5rem;
+
+  --text-60: 3.75rem;
+  --text-60--line-height: 4.5rem;
+
+  /* Colors */
+  --color-primary: #E52C32;
+  --color-primary-50: #FCEBEB;
+  --color-primary-100: #FFE3E4;
+  --color-primary-300: #FFC3C5;
+  --color-primary-500: #EF696D;
+  --color-primary-700: #EA464B;
+  --color-primary-900: #E52C32;
+
+  --color-neutral-white: #FCFCFC;
+  --color-neutral-black: #120000;
+  --color-neutral-gray-100: #FCF9F9;
+  --color-neutral-gray-300: #F7F5F5;
+  --color-neutral-gray-500: #B0ABAB;
+  --color-neutral-gray-700: #413333;
+
+  --color-primaryTrans-100: #FCEAEB;
+  --color-primaryTrans-200: #FAD5D6;
+  --color-primaryTrans-400: #F5ABAD;
+  --color-primaryTrans-500: #F29598;
+  --color-primaryTrans-800: #EA565B;
+
+  --color-grayTrans-100: #E7E5E5;
+  --color-grayTrans-200: #D0CCCC;
+  --color-grayTrans-400: #A09999;
+  --color-grayTrans-500: #888080;
+  --color-grayTrans-800: #413333;
+
+  /* Font Weight */
+  --font-weight-regular: 500;
+  --font-weight-bold: 700;
+
+  /* Line Height */
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Spacing */
+  --spacing-0: 0rem;
+  --spacing-4: 0.25rem;
+  --spacing-8: 0.5rem;
+  --spacing-12: 0.75rem;
+  --spacing-16: 1rem;
+  --spacing-20: 1.25rem;
+  --spacing-24: 1.5rem;
+  --spacing-28: 1.75rem;
+  --spacing-32: 2rem;
+  --spacing-36: 2.25rem;
+  --spacing-40: 2.5rem;
+  --spacing-44: 2.75rem;
+  --spacing-48: 3rem;
+  --spacing-80: 5rem;
+  --spacing-full: 9999px;
+
+  /* Z-Index */
+  --z-hide: -1;
+  --z-auto: auto;
+  --z-base: 0;
+  --z-docked: 10;
+  --z-dropdown: 1000;
+  --z-sticky: 1100;
+  --z-banner: 1200;
+  --z-overlay: 1300;
+  --z-modal: 1400;
+  --z-popover: 1500;
+  --z-skipLink: 1600;
+  --z-toast: 1700;
+  --z-tooltip: 1800;
 }
 
 /* 기본 스타일 */
