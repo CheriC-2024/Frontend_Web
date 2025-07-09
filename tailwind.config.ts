@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss';
-import designTokens from '@/styles/design-tokens';
 
 const config: Config = {
   content: [
@@ -11,31 +10,6 @@ const config: Config = {
     './*.{html,js,ts,jsx,tsx,mdx}',
   ],
 
-  theme: {
-    extend: {
-      colors: designTokens.colors,
-
-      fontSize: designTokens.typography.fontSize,
-      fontWeight: designTokens.typography.fontWeight,
-      lineHeight: designTokens.typography.lineHeight,
-
-      spacing: designTokens.spacing,
-
-      borderRadius: {
-        none: designTokens.spacing[0],
-        xs: designTokens.spacing[4],
-        sm: designTokens.spacing[8],
-        md: designTokens.spacing[16],
-        lg: designTokens.spacing[24],
-        xl: designTokens.spacing[32],
-        '2xl': designTokens.spacing[40],
-        '3xl': designTokens.spacing[48],
-        full: designTokens.spacing.full,
-      },
-
-      zIndex: designTokens.zIndex,
-    },
-  },
   plugins: [],
 };
 
