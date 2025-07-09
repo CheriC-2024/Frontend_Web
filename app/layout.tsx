@@ -1,17 +1,15 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
+import '@/styles/globals.css';
 import { ReactNode } from 'react';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
+import {
+  pretendard,
+  blackhan,
+  dacapo,
+  snowfrost,
+  santokki,
+  lotteria,
+  ryu,
+} from './fonts';
 
 export const metadata: Metadata = {
   title: 'CheriC',
@@ -24,18 +22,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+    <html
+      lang="ko"
+      className={`
+        ${pretendard.variable}
+        ${blackhan.variable}
+        ${dacapo.variable}
+        ${snowfrost.variable}
+        ${santokki.variable}
+        ${lotteria.variable}
+        ${ryu.variable}
+      `}
+    >
+      <body className="bg-white text-black font-primary">{children}</body>
     </html>
   );
 }

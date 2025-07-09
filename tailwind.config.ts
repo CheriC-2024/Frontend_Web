@@ -7,22 +7,13 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './lib/**/*.{js,ts,jsx,tsx,mdx}',
     './layouts/**/*.{js,ts,jsx,tsx,mdx}',
-    './layouts/**/*.{js,ts,jsx,tsx,mdx}',
+    './styles/**/*.{js,ts,jsx,tsx}',
     './*.{html,js,ts,jsx,tsx,mdx}',
   ],
+
   theme: {
     extend: {
       colors: designTokens.colors,
-
-      fontFamily: {
-        primary: ['var(--font-pretendard)', 'sans-serif'],
-        blackhan: ['var(--font-blackhan)', 'sans-serif'],
-        dacapo: ['var(--font-dacapo)', 'sans-serif'],
-        snowfrost: ['var(--font-snowfrost)', 'sans-serif'],
-        santokki: ['var(--font-santokki)', 'sans-serif'],
-        lotteria: ['var(--font-lotteria)', 'sans-serif'],
-        ryu: ['var(--font-ryu)', 'sans-serif'],
-      },
 
       fontSize: designTokens.typography.fontSize,
       fontWeight: designTokens.typography.fontWeight,
@@ -47,4 +38,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;

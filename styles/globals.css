@@ -1,13 +1,13 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --font-pretendard: 'Pretendard', sans-serif;
+  --font-blackhan: 'BlackHanSans-Regular', sans-serif;
+  --font-dacapo: 'MapoDacapo', sans-serif;
+  --font-snowfrost: 'SnowFrost', sans-serif;
+  --font-santokki: 'SanTokki', sans-serif;
+  --font-lotteria: 'Lotteria', sans-serif;
+  --font-ryu: 'OnGeurLip-Ryu', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,7 +17,21 @@
   }
 }
 
+@theme inline {
+  --font-sans: var(--font-pretendard);
+  --font-blackhan: var(--font-blackhan);
+  --font-dacapo: var(--font-dacapo);
+  --font-snowfrost: var(--font-snowfrost);
+  --font-santokki: var(--font-santokki);
+  --font-lotteria: var(--font-lotteria);
+  --font-ryu: var(--font-ryu);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+/* 기본 스타일 */
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 }
