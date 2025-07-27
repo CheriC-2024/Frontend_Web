@@ -8,6 +8,16 @@ const withPWA = require('next-pwa')({
   buildExcludes: [/middleware-manifest\.json$/],
 });
 
-const nextConfig: NextConfig = {};
+const nextConfig: NextConfig = {
+  experimental: {},
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'http',
+        hostname: '**',
+      },
+    ],
+  },
+};
 
 export default withPWA(nextConfig);
