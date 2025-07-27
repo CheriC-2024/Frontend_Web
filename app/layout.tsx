@@ -36,7 +36,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         ${ryu.variable}
       `}
     >
-      <body className="bg-white text-black font-primary">{children}</body>
+      <body className="bg-white text-black font-primary mx-auto max-w-[430px] w-full">
+        {children}
+      </body>
     </html>
   );
 }
