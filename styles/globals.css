@@ -211,3 +211,26 @@ body {
 *::-webkit-scrollbar {
   display: none;
 }
+
+@layer base {
+  button {
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  
+  }
+
+  button:active {
+    @apply opacity-50;
+  }
+
+  @media (hover: hover) {
+    button:hover {
+      @apply opacity-50;
+    }
+  }
+
+  button:focus {
+    @apply outline-none ring-1 ring-neutral-gray-500;
+  }
+}
