@@ -36,8 +36,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         ${ryu.variable}
       `}
     >
-      <body className="bg-white text-black font-primary mx-auto max-w-[430px] w-full">
-        {children}
+      <body className=" text-black font-primary overflow-x-hidden">
+        <div className="flex justify-center">
+          <div className="w-full min-h-screen overflow-y-auto">{children}</div>
+        </div>
       </body>
     </html>
   );

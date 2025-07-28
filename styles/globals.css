@@ -204,6 +204,8 @@ body {
 * {
   scrollbar-width: none;  
   -ms-overflow-style: none;
+  max-width: 420px;
+  justify-self: center;
 }
 
 *::-webkit-scrollbar {
